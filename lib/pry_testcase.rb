@@ -11,6 +11,14 @@ module PryTestcase
       @enabled[Thread.current]
     end
 
+    def enable
+      @enabled[Thread.current] = true
+    end
+
+    def disable
+      @enabled.delete(Thread.current)
+    end
+
     def pry
       return unless enabled?
 
