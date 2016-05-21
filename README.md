@@ -1,8 +1,8 @@
 # PryTestcase
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pry_testcase`. To experiment with that code, run `bin/console` for an interactive prompt.
+Run binding.pry only specified testcase.
 
-TODO: Delete this and the text above, and describe your gem
+[![Gem Version](https://badge.fury.io/rb/pry_testcase.svg)](https://badge.fury.io/rb/pry_testcase)
 
 ## Installation
 
@@ -22,7 +22,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+PryTestcase is instead of `binding.pry` in test.
+
+```ruby
+# Post mesage to twitter
+def say(msg, param)
+  opt = to_opt(param)
+  opt.message = msg
+
+  # here
+  PryTestcase.pry
+
+  send_to_twitter(opt)
+end
+```
+
+```ruby
+describe '#say' do
+  context 'case1' do
+    it 'should send to twitter' do
+      ...
+    end
+  end
+
+  # here
+  context 'case2', :with_pry_testcase do
+    it 'should send to twitter' do
+      ...
+    end
+  end
+end
+```
+
+`PryTestcase.pry` works as `binding.pry` in `case2` only.
+In `case1`, `PryTestcase.pry` does nothing.
+
+
 
 ## Development
 
@@ -32,5 +67,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pry_testcase.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/pocke/pry_testcase.
