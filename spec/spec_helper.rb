@@ -1,4 +1,4 @@
-require 'pry_testcase'
+require 'pry_testcase/rspec'
 
 require 'rspec-power_assert'
 
