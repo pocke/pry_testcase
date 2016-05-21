@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.license       = 'CC0-1.0'
 
   spec.add_runtime_dependency 'pry', '~> 0.10.3'
   spec.add_runtime_dependency 'binding_of_caller', '~> 0.7.2'
