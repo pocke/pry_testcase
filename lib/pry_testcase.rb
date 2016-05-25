@@ -24,5 +24,10 @@ module PryTestcase
 
       binding.of_caller(1).pry
     end
+
+    def pry_once
+      pry
+      disable
+    end
   end
 end
