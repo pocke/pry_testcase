@@ -38,6 +38,11 @@ end
 ```
 
 ```ruby
+# spec_helper.rb
+require 'pry_testcase/rspec'
+```
+
+```ruby
 describe '#say' do
   context 'case1' do
     it 'should send to twitter' do
