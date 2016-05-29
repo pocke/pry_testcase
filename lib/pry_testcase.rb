@@ -22,7 +22,8 @@ module PryTestcase
     def pry
       return unless enabled?
 
-      binding.of_caller(1).pry
+      depth = caller_locations.find_index{|c| !c.path.end_with?('pry_testcase.rb')} + 1
+      binding.of_caller(depth).pry
     end
 
     def pry_once
