@@ -3,6 +3,7 @@
 Run binding.pry only specified testcase.
 
 [![Gem Version](https://badge.fury.io/rb/pry_testcase.svg)](https://badge.fury.io/rb/pry_testcase)
+[![Build Status](https://travis-ci.org/pocke/pry_testcase.svg?branch=master)](https://travis-ci.org/pocke/pry_testcase)
 
 ## Installation
 
