@@ -8,18 +8,21 @@ describe PryTestcase::RSpec do
 
   context 'with pry testcase', :with_pry_testcase do
     it 'should start pry' do
+      expect_any_instance_of(Binding).to receive(:pry)
       cat.say
     end
   end
 
   context 'without pry testcase' do
     it 'should not start pry' do
+      expect_any_instance_of(Binding).not_to receive(:pry)
       cat.say
     end
   end
 
   context 'with pry testcase to it' do
     it 'should start pry', :with_pry_testcase do
+      expect_any_instance_of(Binding).to receive(:pry)
       cat.say
     end
   end

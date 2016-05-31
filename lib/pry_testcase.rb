@@ -8,7 +8,7 @@ module PryTestcase
 
   class << self
     def enabled?
-      @enabled[Thread.current]
+      !!@enabled[Thread.current]
     end
 
     def enable
